@@ -4,7 +4,7 @@ function App() {
   const [restMsg, setRestMsg] = useState('');
   const [httpMsg, setHttpMsg] = useState('');
 
-  const REST_URL = "https://abcd1234.execute-api.us-east-1.amazonaws.com/dev/rest";
+  const REST_URL = "https://w46adkqgx6.execute-api.us-east-1.amazonaws.com/dev";
   const HTTP_URL = "https://xyz123.execute-api.us-east-1.amazonaws.com/http";
 
   const callRest = async () => {
