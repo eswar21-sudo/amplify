@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
 function App() {
+  const [restMsg, setRestMsg] = useState('');
+  const [httpMsg, setHttpMsg] = useState('');
+
+  const REST_URL = "https://abcd1234.execute-api.us-east-1.amazonaws.com/dev/rest";
+  const HTTP_URL = "https://xyz123.execute-api.us-east-1.amazonaws.com/http";
+
+  const callRest = async () => {
+    const res = await fetch(REST_URL);
+    const data = await res.json();
+    setRestMsg(data.message);
+  };
+
+  const callHttp = async () => {
+    const res = await fetch(HTTP_URL);
+    const data = await res.json();
+    setHttpMsg(data.message);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ padding: 20 }}>
+      <h2>AWS Amplify + Lambda + API Gateway</h2>
+      <button onClick={callRest}>Call REST API</button>
+      <p>{restMsg}</p>
+      <button onClick={callHttp}>Call HTTP API</button>
+      <p>{httpMsg}</p>
     </div>
   );
 }
