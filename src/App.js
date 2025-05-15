@@ -4,8 +4,8 @@ function App() {
   const [restMsg, setRestMsg] = useState('');
   const [httpMsg, setHttpMsg] = useState('');
 
-  const REST_URL = "https://w46adkqgx6.execute-api.us-east-1.amazonaws.com/dev/rest";
-  const HTTP_URL = "https://mqcidownod.execute-api.us-east-1.amazonaws.com/prod/http";
+  const REST_URL = "https://icdpmy4r6a.execute-api.us-east-1.amazonaws.com/dev/rest";
+  const HTTP_URL = "https://o5vy6lx3we.execute-api.us-east-1.amazonaws.com";
 
   const callRest = async () => {
     const res = await fetch(REST_URL);
